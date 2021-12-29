@@ -100,6 +100,7 @@ If you start a background process, you don't need the phone to connect with your
 # APIS
 
 **[Connect to a device](#connect-to-a-device)**
+
 **[Device APIS](#device-apis)**
   - **[Shell commands](#shell-commands)**
   - **[Retrieve the device info](#retrieve-the-device-info)**
@@ -118,10 +119,13 @@ If you start a background process, you don't need the phone to connect with your
   - **[Open Quick Settings](#open-quick-settings)**
   - **[Open Url](#open-url)**
   - **[Show float window](#show-float-window)**
+
 **[Input Method](#input-method)**
+
 **[XPATH](#xpath)**
   - **[Finding elements](#finding-elements)**
   - **[Xpath elements API](#xpath-elements-api)**
+  
 **[UI Object](#ui-object)**
   - **[construct query](#construct-query)**
   - **[execute ui object query](#execute-ui-object-query)**
