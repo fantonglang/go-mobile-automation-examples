@@ -100,20 +100,32 @@ If you start a background process, you don't need the phone to connect with your
 # APIS
 
 **[Connect to a device](#connect-to-a-device)**
-**[UI automation](#basic-api-usages)**
+**[Device APIS](#device-apis)**
   - **[Shell commands](#shell-commands)**
   - **[Retrieve the device info](#retrieve-the-device-info)**
+  - **[Clipboard](#clipboard)**
   - **[Key Events](#key-events)**
-  - **[Gesture interaction with the device](#gesture-interaction-with-the-device)**
-  - **[Screen-related](#screen-related)**
-  - **[Selector](#selector)**
-  - **[Watcher](#watcher)**
-  - **[Global settings](#global-settings)**
-  - **[Input method](#input-method)**
-  - **[Toast](#toast)**
-  - **[XPath](#xpath)**
-  - **[Screenrecord](#screenrecord)**
-  - **[Image match](#image-match)**
+  - **[Press Key](#press-key)**
+  - **[New command timeout](#new-command-timeout)**
+  - **[Screenshot](#screenshot)**
+  - **[UI Hierarchy](#ui-hierarchy)**
+  - **[Touch](#touch)**
+  - **[Click](#click)**
+  - **[Double Click](#double-click)**
+  - **[Long Click](#long-click)**
+  - **[Swipe](#swipe)**
+  - **[Set Orientation](#set-orientation)**
+  - **[Open Quick Settings](#open-quick-settings)**
+  - **[Open Url](#open-url)**
+  - **[Show float window](#show-float-window)**
+**[Input Method](#input-method)**
+**[XPATH](#xpath)**
+  - **[Finding elements](#finding-elements)**
+  - **[Xpath elements API](#xpath-elements-api)**
+**[UI Object](#ui-object)**
+  - **[construct query](#construct-query)**
+  - **[execute ui object query](#execute-ui-object-query)**
+  - **[ui object element apis](#ui-object-element-apis)**
 
 ## Connect to a device
 
@@ -482,7 +494,7 @@ if d.XPath(`//*[@text="your-control-text"]`).First() != nil {
 ```
 * Wait element appear
 ```go
-el := d.Wait(time.Minute)
+el := d.XPath(`//*[@text="your-control-text"]`).Wait(time.Minute)
 if el == nil {
   log.Println("element doesn't appear within 1 minute")
   return
@@ -491,11 +503,18 @@ if el == nil {
 ```
 * Wait element disappear
 ```go
-ok := d.WaitGone(time.Minute)
+ok := d.XPath(`//*[@text="your-control-text"]`).WaitGone(time.Minute)
 if !ok {
   log.Println("element doesn't disappear within 1 minute")
   return
 }
+```
+* If you want run xpath query based on ui hierachy snaphot,
+```go
+content, _ := d.DumpHierarchy(false, false) // content is the text
+doc, _ := FormatHierachy(content) // doc is the *xmlquery.Node object
+...
+el := d.XPath2(`//*[@text="your-control-text"]`, doc).First()
 ```
 
 ### Xpath elements API
@@ -702,6 +721,10 @@ ok := el.Type("aaa")
 img := el.Screenshot() // img is the image.Image type
 ```
 
-# If you want to support author, please donate, thanks
+# If you want to support author, please donate(wechat), thanks
 
 ![image](./doc/wechat.jpg)
+
+# Contact me if you'd like working with me on the computer vision & speech recognition part.
+
+![image](./doc/wechat2.jpg)
