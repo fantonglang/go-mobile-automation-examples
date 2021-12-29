@@ -97,6 +97,9 @@ $ adb shell /data/local/tmp/helloworld
 ```
 If you start a background process, you don't need the phone to connect with your PC/macos. Note that you can transfer your linux shell knowledge to using the adb shell.
 
+## Examples
+[This](./douyin-luo-live) is a working example. Read the comments in main.go carefully. This helps to resolve all dependencies and environment requirements before you start. The comments also give the commands for compilation, deployment, and execution.
+
 # APIS
 
 **[Connect to a device](#connect-to-a-device)**
@@ -125,7 +128,7 @@ If you start a background process, you don't need the phone to connect with your
 **[XPATH](#xpath)**
   - **[Finding elements](#finding-elements)**
   - **[Xpath elements API](#xpath-elements-api)**
-  
+
 **[UI Object](#ui-object)**
   - **[construct query](#construct-query)**
   - **[execute ui object query](#execute-ui-object-query)**
