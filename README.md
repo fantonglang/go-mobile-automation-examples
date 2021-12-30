@@ -760,5 +760,5 @@ img := el.Screenshot() // img 是 image.Image 类型对象
 
 **如果想支持作者，左边是微信打赏码；如果想和作者交朋友或者一起做好玩的编程事情，右边是微信加好友的二维码**
 
-<img src="./doc/wechat.jpg" style="display: inline-block; width: 45%; margin-right: 5px">
-<img src="./doc/wechat2.jpg" style="display: inline-block; width: 45%;">
+<img src="./doc/wechat.jpg" style="display: inline-block; width: 25%; margin-right: 5px">
+<img src="./doc/wechat2.jpg" style="display: inline-block; width: 25%;">
